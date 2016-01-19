@@ -15,12 +15,12 @@ Vagrant.configure(2) do |config|
       centos.vm.network "private_network", ip: "192.168.52.11"
   end
   
- # config.vm.provision "ansible" do |ansible|
- #   ansible.playbook = "tests/test.yml"
- #   ansible.groups = {
- #     "centos" => ["centos"],
- #     "ubuntu" => ["ubuntu"],
- #   }
- # end
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "tests/test.yml"
+    ansible.groups = {
+      "centos" => ["centos"],
+      "ubuntu" => ["ubuntu"],
+    }
+  end
 
 end
