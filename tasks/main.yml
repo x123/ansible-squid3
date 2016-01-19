@@ -1,0 +1,11 @@
+---
+- name: Include OS-specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+
+# Install RedHat-like
+- include: squid3-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+# Install Debian-like
+- include: squid3-Debian.yml
+  when: ansible_os_family == 'Debian'
