@@ -47,6 +47,11 @@ squid3_http_access:
   - { perm: 'deny', aclname: 'all' }
   ### default ###
 
+squid3_cache_directives:
+  ### default ###
+  - { perm: 'allow', aclname: 'all' }
+  ### default ###
+
 squid3_refresh_pattern:
   ### default ###
   - { case_sensitive: '', regex: '^ftp:', min: '1440', percent: '20%', max: '10080', opts: '' }
