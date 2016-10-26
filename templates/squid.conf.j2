@@ -54,6 +54,10 @@ cache {{ cache_directive.perm }} {{ cache_directive.aclname }}
 {% endfor %}
 {% endif %}
 
+{% if squid3_forwarded_for %}
+forwarded_for {{ squid3_forwarded_for }}
+{% endif %}
+
 http_port {{ squid3_port }}
 
 {% if squid3_diskcache %}
