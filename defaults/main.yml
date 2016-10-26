@@ -52,6 +52,8 @@ squid3_cache_directives:
   - { perm: 'allow', aclname: 'all' }
   ### default ###
 
+squid3_forwarded_for: 'on'
+
 squid3_refresh_pattern:
   ### default ###
   - { case_sensitive: '', regex: '^ftp:', min: '1440', percent: '20%', max: '10080', opts: '' }
