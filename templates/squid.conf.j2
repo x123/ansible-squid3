@@ -48,6 +48,12 @@ http_access {{ http_access.perm }} {{ http_access.aclname }}
 http_access {{ http_access.perm }} {{ http_access.aclname }}
 {% endfor %}
 
+{% if squid3_cache_directives is defined %}
+{% for cache_directive in squid3_cache_directives %}
+cache {{ cache_directive.perm }} {{ cache_directive.aclname }}
+{% endfor %}
+{% endif %}
+
 http_port {{ squid3_port }}
 
 {% if squid3_diskcache %}
